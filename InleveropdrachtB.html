@@ -16,7 +16,7 @@
         <tr>
           <th ng-click="orderByMe('auto')">Automerk</th>
           <th ng-click="orderByMe('kenteken')">Kenteken</th>
-          <th>Kleur</th>
+          <th ng-click="orderByMe('kleur')">Kleur</th>
           <th ng-click="orderByMe('prijs')">Prijs</th>
         </tr>
         <tr ng-repeat="x in auto | orderBy:myOrderBy">
