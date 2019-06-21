@@ -1,2 +1,2 @@
-# DG1
-project DG1
+# Angular
+project Angular
