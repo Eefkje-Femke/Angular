@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <style>
+    table, td, tr{
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    td{
+      padding:5px;
+    }
+  </style>
+  <body>
+    <div ng-app="myApp" ng-controller="Ctrl">
+      <table><!--table-->
+        <tr>
+          <th ng-click="orderByMe('auto')">Automerk</th>
+          <th ng-click="orderByMe('kenteken')">Kenteken</th>
+          <th ng-click="orderByMe('kleur')">Kleur</th>
+          <th ng-click="orderByMe('prijs')">Prijs</th>
+        </tr>
+        <tr ng-repeat="x in auto | orderBy:myOrderBy">
+          <td >{{ x.auto | uppercase }}</td>
+          <td> {{ x.kenteken}}</td>
+          <td> {{ x.kleur}}</td>
+          <td> {{ x.prijs | currency }}</td>
+        </tr>
+      </table>
+    </div>
+
+    <script>
+      var app = angular.module('myApp', []);
+      app.controller('Ctrl', function($scope) {
+        $scope.auto = [//array met gegevens
+          {auto:'Audi',kenteken:'47-ZK-KJ',kleur:'groen',prijs: 36000},
+          {auto:'Volkswagen',kenteken:'84-RT-WQ',kleur:'geel',prijs: 42000},
+          {auto:'Mercedes',kenteken:'15-HF-PV',kleur:'zwart',prijs: 34000},
+          {auto:'Peugot',kenteken:'74-SE-VC',kleur:'donkerblauw',prijs: 11000},
+          {auto:'Ferrari',kenteken:'42-AS-QZ',kleur:'rood',prijs: 89000}
+          ];
+          $scope.orderByMe = function(x) {//order by me
+              $scope.myOrderBy = x;
+          }
+      });
+    </script>
+  </body>
+</html>
