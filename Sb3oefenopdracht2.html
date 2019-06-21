@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <body>
+
+    <div ng-app="myApp" ng-controller="myCtrl">
+      First number: <input ng-model="fnumber"><br /><br />
+      Second number: <input ng-model="snumber"><br /><br />
+      First number: <span ng-bind="fnumber"></span><br />
+      
+      <p>Second number: {{snumber}}</p>
+      <p>Numbers multiplied: {{fnumber * snumber}}</p>
+      <p>Numbers subtracted: {{fnumber - snumber}}</p>
+      <p>Numbers divided by eachother: {{fnumber / snumber}}</p>
+      <p>Numbers +: {{fnumber + snumber}}</p><!--pakt de + niet-->
+    </div>
+
+    <script>
+      var app = angular.module('myApp', []);
+      app.controller('myCtrl', function($scope) {
+      });
+    </script>
+
+  </body>
+</html>

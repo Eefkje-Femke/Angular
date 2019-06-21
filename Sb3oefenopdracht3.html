@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <style>
+    div{
+      margin:5px;
+    }
+  </style>
+  <body>
+
+    <div ng-app="myApp" ng-controller="myCtrl">
+      <div>First number: <input type="number" ng-model="fnumber"></div>
+      <div>Second number: <input type="number" ng-model="snumber"></div>
+
+      <div id='blokje' style= "height: {{fnumber}}px;width: {{snumber}}px; background-color:red;"></div>
+    </div>
+
+    <script>
+      var app = angular.module('myApp', []);
+      app.controller('myCtrl', function($scope) {
+      });
+    </script>
+  </body>
+</html>

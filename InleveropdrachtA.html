@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="inleveropdrachtA.js"></script>
+  <style>
+    table, td, tr{
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    td{
+      padding:5px;
+    }
+    input.ng-invalid {/*required*/
+      background-color: red;
+    }
+  </style>
+  <body ng-app="myApp" ng-controller="myCtrl">
+    <form  name="myForm">
+      Voornaam: <input ng-model="vnaam" required>
+      Achternaam: <input ng-model="anaam" required><br /><br />
+      Adres: <input ng-model="adres" required><br /><br />
+      Huisnummer: <input ng-model="hnummer" required><br /><br />
+      Postcode: <input ng-model="postcode" name="postcode" ng-pattern="regex" required>Valid: {{myForm.postcode.$valid}}<br /><br />
+      Woonplaats: <input ng-model="wplaats" required><br /><br />
+      Emailadres: <input ng-model="email" name="email" required>Valid: {{myForm.email.$valid}}<br /><br />
+    </form>
+
+    <table>
+      <tr>
+        <td>Voornaam: </td>
+        <td>{{ vnaam }}</td>
+      </tr>
+      <tr>
+        <td>Achternaam: </td>
+        <td>{{ anaam }}</td>
+      </tr>
+      <tr>
+        <td>Adres: </td>
+        <td>{{ adres }}</td>
+      </tr>
+      <tr>
+        <td>Huisnummer: </td>
+        <td>{{ hnummer }}</td>
+      </tr>
+      <tr>
+        <td>Postcode: </td>
+        <td>{{ postcode }}</td>
+      </tr>
+      <tr>
+        <td>Woonplaats: </td>
+        <td>{{ wplaats }}</td>
+      </tr>
+      <tr>
+        <td>E-mailadres: </td>
+        <td>{{ email }}</td>
+      </tr>
+  </body>
+</html>
