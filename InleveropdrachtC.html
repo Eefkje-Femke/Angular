@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <style>
+    div{
+      margin:5px;
+      padding:5px;
+    }
+    table, td, tr{
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    td{
+      padding:5px;
+    }
+  </style>
+  <body>
+    <div ng-app="myApp" ng-controller="bedrijfCtrl">
+      <table>
+        <tr ng-repeat="x in bedrijf">
+          <td>{{ x.Bedrijfsnaam }}</td>
+          <td>{{ x.Adres}}</td>
+          <td>{{ x.Woonplaats }}</td>
+          <td>{{ x.Telnr }}</td>
+        </tr>
+      </table>
+    </div>
+
+    <script>
+      var app = angular.module('myApp', []);
+       app.controller('bedrijfCtrl', function($scope, $http) {
+         $http.get("auto.php")
+         .then(function (response) {$scope.bedrijf = response.data.records;//get Json and put it in bedrijf
+         });
+       });
+
+    </script>
+  </body>
+</html>
