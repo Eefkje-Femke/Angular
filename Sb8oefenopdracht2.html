@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <style>
+    div#first{
+      margin:5px;
+      background-color: red;
+      width: 50px;
+      height: 50px;
+    }
+    div#second{
+      margin:5px;
+      background-color: green;
+      width: 50px;
+      height: 50px;
+    }
+    div#third{
+      margin:5px;
+      background-color: blue;
+      width: 50px;
+      height: 50px;
+    }
+  </style>
+  <body ng-app="myApp" ng-controller="myCtrl">
+
+    <div id="first" ng-click="count1 = count1 + 1"> {{ count1 }} </div>
+    <div id="second" ng-click="count2 = count2 + 1"> {{ count2 }}  </div>
+    <div id="third" ng-click="count3 = count3 + 1"> {{ count3 }}  </div>
+
+    <script>
+      var app = angular.module('myApp', []);
+      app.controller('myCtrl', function($scope) {
+        $scope.myfunction = function(event) {
+          $scope.count1 = 0;
+          $scope.count2 = 0;
+          $scope.count3 = 0;
+        };
+      });
+    </script>
+  </body>
+</html>
