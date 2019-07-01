@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+  <script src="app.js"></script>
   <style>
     div{
       margin:5px;
@@ -13,12 +15,27 @@
     td{
       padding:5px;
     }
+    button{
+      margin: 5px;
+    }
   </style>
   <body>
     <div ng-app="myApp" ng-controller="bedrijfCtrl">
       <table>
-        <tr ng-repeat="x in persoon">
-          <td>{{ x.ID }}</td>
+        <tr>
+          <th>Id</th>
+          <th>Voornaam</th>
+          <th ng-click="orderByMe('Achternaam')">Achternaam</th>
+          <th>Straat</th>
+          <th>Huisnummer</th>
+          <th>Postcode</th>
+          <th ng-click="orderByMe('Woonplaats')">Woonplaats</th>
+          <th>Telefoonnummer</th>
+          <th>Tijd toegevoegd</th>
+          <th>Verwijderen</th>
+        </tr>
+        <tr ng-repeat="x in persoon | orderBy:myOrderBy" ng-mouseover="x.Tijdtoegevoegd">
+          <td ng-model="id">{{ x.Id }}</td>
           <td>{{ x.Voornaam }}</td>
           <td>{{ x.Achternaam }}</td>
           <td>{{ x.Straat }}</td>
@@ -26,19 +43,17 @@
           <td>{{ x.Postcode }}</td>
           <td>{{ x.Woonplaats }}</td>
           <td>{{ x.Telefoonnummer }}</td>
-          <td>{{ x.TijdToegevoegd }}</td>
+          <td >{{ x.Tijdtoegevoegd }}</td>
+          <td><button ng-click="click(x.Id)">Delete</button></td>
         </tr>
       </table>
+
+      <p><a href="#/!">Main</a></p>
+      <a href="#!delete">delete</a>
+      <p>{{ msg }}</p>
+      <p>{{ test }}</p>
+      <div ng-view></div>
     </div>
 
-    <script>
-      var app = angular.module('myApp', []);
-       app.controller('bedrijfCtrl', function($scope, $http) {
-         $http.get("connect.php")
-         .then(function (response) {$scope.persoon = response.data.records;//get Json and put it in bedrijf
-         });
-       });
-
-    </script>
   </body>
 </html>
