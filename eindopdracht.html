@@ -43,15 +43,15 @@
           <td>{{ x.Postcode }}</td>
           <td>{{ x.Woonplaats }}</td>
           <td>{{ x.Telefoonnummer }}</td>
-          <td >{{ x.Tijdtoegevoegd }}</td>
-          <td><button ng-click="click(x.Id)">Delete</button></td>
+          <td>{{ x.Tijdtoegevoegd }}</td>
+          <td><button ng-click="ID(x.Id)">Select</button></td>
+          <!-- <td><button ng-click="click(x.Id)">Delete</button></td> -->
         </tr>
       </table>
 
       <p><a href="#/!">Main</a></p>
+      <a href="#!update">update</a>
       <a href="#!delete">delete</a>
-      <button ng-click="update(x.Id)">Update</button>
-
 
       <p>{{ msg }}</p>
       <div ng-view></div>
