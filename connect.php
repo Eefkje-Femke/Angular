@@ -1,28 +1,25 @@
 <?php
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
 
-$conn = new mysqli("localhost", "root", "", "personen");
+// $conn = new mysqli("localhost", "root", "", "personen");
+//
+// if ($conn->connect_error) {
+//     die("Connection failed: " . $conn->connect_error);
+// }
 
-$result = $conn->query("SELECT ID, Voornaam, Achternaam, Straat, Huisnummer, Postcode, Woonplaats, Telefoonnummer,TijdToegevoegd FROM persoon");//sql query
+function db_connect(){
+  //connecting with database
+  $servername='localhost';
+  $databasename= 'personen';
+  $username= 'root';
+  $password= '';
 
-$outp = "";
-while($rs = $result->fetch_array(MYSQLI_ASSOC)) {//get result
-  if ($outp != "") {$outp .= ",";}
-   $outp .= '{"Id":"' . $rs["ID"] . '",';
-   $outp .= '"Voornaam":"' . $rs["Voornaam"]  . '",';
-   $outp .= '"Achternaam":"'. $rs["Achternaam"] . '",';
-   $outp .= '"Straat":"' . $rs["Straat"]  . '",';
-   $outp .= '"Huisnummer":"'. $rs["Huisnummer"] . '",';
-   $outp .= '"Postcode":"'. $rs["Postcode"] . '",';
-   $outp .= '"Woonplaats":"' . $rs["Woonplaats"]  . '",';
-   $outp .= '"Telefoonnummer":"'. $rs["Telefoonnummer"] . '",';
-   $outp .= '"Tijd toegevoegd":"' . $rs["TijdToegevoegd"]  . '"}';
- }
-   $outp ='{"records":['.$outp.']}';
-
-   $conn->close();
-
-  echo($outp);//this is send
+  // creat connection
+  $conn = new mysqli($servername, $username, $password, $databasename);
+  // check connection
+  if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+    }
+  return $conn;
+}
 
 ?>

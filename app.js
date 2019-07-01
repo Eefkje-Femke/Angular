@@ -1,8 +1,7 @@
 var app = angular.module('myApp', ["ngRoute"]);
 
-
  app.controller('bedrijfCtrl', function($scope, $http) {
-   $http.get("connect.php")
+   $http.get("select.php")
    .then(function (response) {$scope.persoon = response.data.records;//get Json and put it in bedrijf
    });
    $scope.orderByMe = function(x) {//order by me
@@ -27,54 +26,27 @@ var app = angular.module('myApp', ["ngRoute"]);
           method: "POST",
           url: "delete.php",
           data: {'id': id},
-          // headers: { 'Content-Type': 'application/x-www-form-urlencoded' }//url coded
-          //headers: { 'Content-Type': 'text/html' }//url coded
-          //headers: { 'Content-Type': 'application/json' }//url coded
-
+          headers: { 'Content-Type': 'application/json' }
       }).then(successCallback, errorCallback);
 
-      function successCallback(response){
-        console.log("response");
-        $scope.msg = response;
+      function successCallback(data){
+        console.log("success");
       }
       function errorCallback(error){
         console.log("error: "+error);
-      $scope.msg = error;
+        $scope.msg = error;
       }
 
     }
+  });//controller
 
-});
 
-// app.config(function($routeProvider) {
-//     $routeProvider
-//     .when("/", {
-//         templateUrl : "eindopdracht.html"
-//     })
-//     .when("/delete", {
-//         templateUrl : "delete.php"
-//     });
-// });
-
-  // var url = '/delete', data = {{ x.id }} ,config='contenttype';
-  // $http.post(url, data, config).then(function (response) {
-  //
-  // // This function handles success
-  //
-  // }, function (response) {
-  //
-  // // this function handles error
-  //
+  // app.config(function($routeProvider) {
+  //     $routeProvider
+  //     .when("/", {
+  //         templateUrl : "eindopdracht.html"
+  //     })
+  //     .when("/delete", {
+  //         templateUrl : "delete.php"
+  //     });
   // });
-
-
-     // $scope.click = function(id) {
-     //   $scope.msg = "Do you want to delete id: "+ id;//ID IS HIER!!!!
-     //
-     //   var url = '/delete', data = id;
-     //   $http.post(url, data).then(function (response) {
-     //     $scope.test = "Post Data Submitted Successfully!";
-     //   }, function (response) {
-     //     $scope.test = "Service not Exists";
-     //   });
-     // }
