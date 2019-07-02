@@ -34,7 +34,7 @@
           <th>Tijd toegevoegd</th>
           <th>Verwijderen</th>
         </tr>
-        <tr ng-repeat="x in persoon | orderBy:myOrderBy" ng-mouseover="x.Tijdtoegevoegd">
+        <tr ng-repeat="x in persoon | orderBy:myOrderBy" ng-mouseover="x.Tijdtoegevoegd" ng-click="test()">
           <td ng-model="id">{{ x.Id }}</td>
           <td>{{ x.Voornaam }}</td>
           <td>{{ x.Achternaam }}</td>
@@ -44,14 +44,14 @@
           <td>{{ x.Woonplaats }}</td>
           <td>{{ x.Telefoonnummer }}</td>
           <td>{{ x.Tijdtoegevoegd }}</td>
-          <td><button ng-click="ID(x.Id)">Select</button></td>
-          <!-- <td><button ng-click="click(x.Id)">Delete</button></td> -->
+          <!-- <td><button ng-click="ID(x.Id)">Select</button></td> -->
+          <td><button ng-click="click(x.Id)">Delete</button></td>
         </tr>
       </table>
 
       <p><a href="#/!">Main</a></p>
-      <a href="#!update">update</a>
-      <a href="#!delete">delete</a>
+      <p><a href="#!update">update</a></p>
+      <p><a href="#!delete">delete</a></p>
 
       <p>{{ msg }}</p>
       <div ng-view></div>
