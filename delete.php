@@ -1,18 +1,19 @@
 <?php
- // $conn = include("connect.php");
-// header("Access-Control-Allow-Origin: *");
-// header("Content-Type: application/json; charset=UTF-8");
-//
-//   /*
-//   * Collect all Details from Angular HTTP Request.
-//   */
-//    $request= json_decode(file_get_contents("php://input"));
-//    @$id = $request->id;
-//
-//    $conn = new mysqli("localhost", "root", "", "personen");
-//
-//    $result = $conn->query("DELETE FROM `persoon` WHERE id= $id");//sql query
-//    $conn->close();
+  require 'connect.php';
+  $conn = db_connect();
+
+  header("Access-Control-Allow-Origin: *");
+  header("Content-Type: application/json; charset=UTF-8");
+
+  /*
+  * Collect all Details from Angular HTTP Request.
+  */
+   $request= json_decode(file_get_contents("php://input"));
+   @$id = $request->id;
+
+   // $conn = new mysqli("localhost", "root", "", "personen");
+
+   $result = $conn->query("DELETE FROM `persoon` WHERE id= $id");//sql query
+   $conn->close();
 
 ?>
-<h1>delete.php</h1>

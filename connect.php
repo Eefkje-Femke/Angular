@@ -1,11 +1,4 @@
 <?php
-
-// $conn = new mysqli("localhost", "root", "", "personen");
-//
-// if ($conn->connect_error) {
-//     die("Connection failed: " . $conn->connect_error);
-// }
-
 function db_connect(){
   //connecting with database
   $servername='localhost';
