@@ -2,7 +2,8 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-$conn = new mysqli("localhost", "root", "", "personen");
+  require 'connect.php';
+  $conn = db_connect();
 
 $result = $conn->query("SELECT ID, Voornaam, Achternaam, Straat, Huisnummer, Postcode, Woonplaats, Telefoonnummer,TijdToegevoegd FROM persoon");//sql query
 
