@@ -1,19 +1,5 @@
-<?php
-  require 'connect.php';
-  $conn = db_connect();
-
-  header("Access-Control-Allow-Origin: *");
-  header("Content-Type: application/json; charset=UTF-8");
-
-  /*
-  * Collect all Details from Angular HTTP Request.
-  */
-   $request= json_decode(file_get_contents("php://input"));
-   @$id = $request->id;
-
-   // $conn = new mysqli("localhost", "root", "", "personen");
-
-   $result = $conn->query("DELETE FROM `persoon` WHERE id= $id");//sql query
-   $conn->close();
-
-?>
+<h2>which id do you want to delete?</h2>
+<form action="delete-process.php" method="get">
+  <input type="number" name="numDelete"></input>
+  <button>Delete record</button>
+</form>

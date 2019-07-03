@@ -32,27 +32,27 @@ app.config(function($routeProvider) {
      console.log(id);
    }
 
-   //delete
-   $scope.click = function (id) {
-     alert("Are you sure you want to delete id:" + id + "?");
-     console.log("request ");
-      var request = $http({//HTTP REQUEST
-          method: "POST",
-          url: "delete.php",
-          data: {'id': id},
-          headers: { 'Content-Type': 'application/json' }
-      }).then(successCallback, errorCallback);
-
-      function successCallback(data){
-        console.log("success");
-        // location.replace("http://localhost/JavaScript/AngularJs/Eindopdracht/eindopdracht.html");
-      }
-      function errorCallback(error){
-        console.log("error: "+error);
-        $scope.msg = error;
-      }
-
-    }
+   // //delete
+   // $scope.click = function (id) {
+   //   // alert("Are you sure you want to delete id:" + id + "?");
+   //   console.log("request ");
+   //    var request = $http({//HTTP REQUEST
+   //        method: "POST",
+   //        url: "delete.php",
+   //        data: {'id': id},
+   //        headers: { 'Content-Type': 'application/json' }
+   //    }).then(successCallback, errorCallback);
+   //
+   //    function successCallback(data){
+   //      console.log("success");
+   //      // location.replace("http://localhost/JavaScript/AngularJs/Eindopdracht/eindopdracht.html");
+   //    }
+   //    function errorCallback(error){
+   //      console.log("error: "+error);
+   //      $scope.msg = error;
+   //    }
+   //
+   //  }
   });//controller
 
 // https://phpenthusiast.com/blog/ajax-with-angular-and-php

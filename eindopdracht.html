@@ -32,7 +32,7 @@
           <th ng-click="orderByMe('Woonplaats')">Woonplaats</th>
           <th>Telefoonnummer</th>
           <th>Tijd toegevoegd</th>
-          <th>Verwijderen</th>
+          <!-- <th>Verwijderen</th> -->
         </tr>
         <tr ng-repeat="x in persoon | orderBy:myOrderBy" ng-mouseover="x.Tijdtoegevoegd" ng-click="test()">
           <td ng-model="id">{{ x.Id }}</td>
@@ -45,7 +45,7 @@
           <td>{{ x.Telefoonnummer }}</td>
           <td>{{ x.Tijdtoegevoegd }}</td>
           <!-- <td><button ng-click="ID(x.Id)">Select</button></td> -->
-          <td><button ng-click="click(x.Id)">Delete</button></td>
+          <!-- <td><button ng-click="click(x.Id)">Delete</button></td> -->
         </tr>
       </table>
 
