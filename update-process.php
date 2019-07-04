@@ -25,12 +25,12 @@
 
      $conn->close();
 ?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
   <html>
   <head>
     <title>edit</title>
   </head>
-    <body>
+    <body> -->
       <form class="" action="update-query.php" method="post">
         <p>Id: <input type="text" name="id" value="<?php echo $id?>"></input></p>
         <p>Voornaam: <input type="text" name="vname" value="<?php echo $Voornaam?>"></input></p>
@@ -40,7 +40,7 @@
         <p>Postcode: <input type="text" name="postcode" value="<?php echo $postCode?>"></input></p>
         <p>Woonplaats: <input type="text" name="wplaats" value="<?php echo $wPlaats?>"></input></p>
         <p>Telefoonnummer: <input type="text" name="tnum" value="<?php echo $Tnum?>"></input></p>
-        <input type="submit" name="edit" value="edit"></input>
+        <input type="submit" name="edit" value="edit"></input><!--go to update-query.php-->
       </form>
-    </body>
-</html>
+    <!-- </body>
+</html> -->

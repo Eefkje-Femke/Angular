@@ -2,4 +2,4 @@
 <form action="delete-process.php" method="get">
   <input type="number" name="numDelete"></input>
   <button>Delete record</button>
-</form>
+</form> 
