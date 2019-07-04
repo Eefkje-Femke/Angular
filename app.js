@@ -14,6 +14,9 @@ app.config(function($routeProvider) {
     })
     .when("/delete", {
         templateUrl : "delete.php"
+    })
+    .when("/create", {
+        templateUrl : "create.php"
     });
 });
 
