@@ -11,6 +11,7 @@
   @$wPlaats = $_POST["wplaats"];
   @$Tnum = $_POST["tnum"];
 
+  //sql query
   $sql = "INSERT INTO `persoon`(`Voornaam`, `Achternaam`, `Straat`, `Huisnummer`, `Postcode`, `Woonplaats`, `Telefoonnummer`)";
    $sql.= " VALUES ('$Voornaam', '$Achternaam', '$Straat', '$Hnum', '$postcode', '$wPlaats', $Tnum)";
 

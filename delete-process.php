@@ -2,11 +2,11 @@
   require 'connect.php';
   $conn = db_connect();
 
-   @$id = $_GET['numDelete'];
+   @$id = $_GET['numDelete'];//get id that should be deleted
 
    $result = $conn->query("DELETE FROM `persoon` WHERE id= $id");//sql query
 
-    if($result) // will return true if succefull else it will return false
+    if($result) // if true, goes to eindopdracht.html
     {
       header('Location: eindopdracht.html');
     } else {

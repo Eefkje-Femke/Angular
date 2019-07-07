@@ -4,19 +4,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
   <script src="app.js"></script>
   <style>
-    div{
-      margin:5px;
-      padding:5px;
-    }
     table, td, tr{
       border: 1px solid black;
       border-collapse: collapse;
     }
     td{
       padding:5px;
-    }
-    button{
-      margin: 5px;
     }
   </style>
   <body>
@@ -32,10 +25,9 @@
           <th ng-click="orderByMe('Woonplaats')">Woonplaats</th>
           <th>Telefoonnummer</th>
           <th>Tijd toegevoegd</th>
-          <!-- <th>Verwijderen</th> -->
         </tr>
-        <tr ng-repeat="x in persoon | orderBy:myOrderBy" ng-mouseover="x.Tijdtoegevoegd" ng-click="test()">
-          <td ng-model="id">{{ x.Id }}</td>
+        <tr ng-repeat="x in persoon | orderBy:myOrderBy" ng-mouseover="time()">
+          <td>{{ x.Id }}</td>
           <td>{{ x.Voornaam }}</td>
           <td>{{ x.Achternaam }}</td>
           <td>{{ x.Straat }}</td>
@@ -53,8 +45,8 @@
       <p><a href="#!create">Create record</a></p>
 
       <p>{{ msg }}</p>
+      <p>Date: {{ timsestamp }}</p>
       <div ng-view></div>
-    </div>
-
+    </div><!--ng-app-->
   </body>
 </html>
