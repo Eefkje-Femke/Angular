@@ -11,6 +11,7 @@
   @$wPlaats = $_POST["wplaats"];
   @$Tnum = $_POST["tnum"];
 
+  //sql query
   $sql="UPDATE `persoon` SET `Voornaam`= '$Voornaam', `Achternaam`= '$Achternaam', `Straat` = '$Straat', `Huisnummer` = '$Hnum', ";
   $sql.= "`Postcode` = '$postcode', `Woonplaats` = '$wPlaats',`Telefoonnummer` = '$Tnum' WHERE id=$id ";
 
